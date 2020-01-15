@@ -112,3 +112,66 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function articleTemplate(title, date, p1, p2, p3) {
+let ctaArticle = document.createElement('div')
+let articleTitle = document.createElement('h2')
+let articleDate = document.createElement('p')
+let articleP1 = document.createElement('p')
+let articleP2 = document.createElement('p')
+let articleP3 = document.createElement('p')
+let expandArticle = document.createElement('span')
+let articleBtn = document.createElement('button')
+
+ctaArticle.prepend(articleTitle);
+expandArticle.append(articleDate);
+ctaArticle.append(articleP1);
+ctaArticle.append(articleP2);
+ctaArticle.append(articleP3);
+ctaArticle.append(expandArticle);
+// expandArticle.prepend(ctaArticle)
+
+ctaArticle.classList.add('article')
+articleDate.classList.add('date')
+articleP1.classList.add('article')
+articleP2.classList.add('article')
+articleP3.classList.add('article')
+expandArticle.classList.add('expandButton')
+
+
+
+
+articleTitle.textContent = title
+articleDate.textContent = date
+articleP1.textContent = p1
+articleP2.textContent = p2
+articleP3.textContent = p3
+
+expandArticle.addEventListener('click', event => {
+console.log('button clicked', event.target)
+// expandArticle.classList.toggle('article-open')
+ctaArticle.classList.toggle('article-open')
+
+
+
+
+
+})
+// console.log(articleTitle)
+// console.log(articleDate)
+// console.log(articleP1)
+// console.log(articleP2)
+// console.log(articleP3)
+// console.log(articleBtn)
+// console.log(expandArticle)
+return ctaArticle;
+
+
+
+}
+
+let cta = document.querySelector('.articles')
+
+data.forEach(data => {
+  cta.append(articleTemplate(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})

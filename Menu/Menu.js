@@ -33,3 +33,42 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+
+
+
+let menuBtn = document.querySelector('.menu-button')
+
+
+
+function createMenu(item) {
+  // define new elements
+  
+
+  let menu = document.createElement('div')
+  let ul = document.createElement('ul')
+  let li = document.createElement('li')
+  
+  console.log(menu)
+  // setup the structure of our elements
+menu.append(ul)
+menu.append(li)
+  // add classes to elements
+menu.classList.add('menu')
+
+  // set text content
+li.textContent(item)
+ 
+  // give the component functionality when the open or closed button is clicked, the content is toggled on/off
+  // button events
+  // Toggling classes means this:
+  // Remove .toggle-on if .toggle-on exists
+  // Add .toggle-on on if .toggle-on does not exist
+  menuBtn.addEventListener('click', event => {
+    console.log('button clicked', event.target)
+    //1. toggle hide-btn on BOTH buttons
+    menu.classList.toggle('menu--open');
+
+  })
+  return menu;
+}
