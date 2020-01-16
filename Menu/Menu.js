@@ -33,38 +33,51 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
-  
-let body = document.querySelector('body')
-
 let menuBtn = document.querySelector('.menu-button')
-let menu = document.createElement('div')
-let ul = document.createElement('ul')
-let li = document.createElement('li')
 
-body.append(menu)
+function createMenu(item) {
 
-menu.appendChild(ul)
+ let menuCta = document.createElement('div')
+ let ul = document.createElement('ul')
 
+menuCta.classList.add('menu')
+ul.classList.add('ul')
 
-menu.classList.add('menu')
-
-menuBtn.addEventListener('click', event => {
-  menu.classList.toggle('menu--open')
-  console.log(event.target)
-
-})
-
-menuItems.forEach(item => {
-  
-})
+menuCta.append(ul)
 
 
-menuItems.map((item) => {
-li.textContent = item
 
-  ul.append(item)
-  console.log(item)
 
-  return items
+ menuBtn.addEventListener('click', event => {
+ menuCta.classList.toggle('menu--open')
+
+console.log('btn clicked', event.target)
+console.log(item)
+ })
+  return menuCta;
+  }
+
+let body = document.querySelector('body')
+body.prepend(createMenu())
+
+function listFunc(item) {
+  let li = document.createElement('li')
+ li.append(item)
+  return li
+}
+
+items = [menuItems]
+
+
+
+
+console.log(items)
+
+
+listFunc()
+let ul = document.querySelector('.ul')
+menuItems.forEach(items => {
+
+  ul.append(listFunc(items))
 })
 
