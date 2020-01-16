@@ -93,24 +93,15 @@ const data = [
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
-
     {three separate paragraph elements}
-
     <span class='expandButton'></span>
   </div>
-
   Hint: You will need to use createElement more than once here!
-
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
   Step 3: return the entire component.
-
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
 
 function articleTemplate(title, date, p1, p2, p3) {
@@ -124,7 +115,7 @@ let expandArticle = document.createElement('span')
 let articleBtn = document.createElement('button')
 
 ctaArticle.prepend(articleTitle);
-expandArticle.append(articleDate);
+ctaArticle.append(articleDate);
 ctaArticle.append(articleP1);
 ctaArticle.append(articleP2);
 ctaArticle.append(articleP3);
@@ -147,12 +138,10 @@ articleP1.textContent = p1
 articleP2.textContent = p2
 articleP3.textContent = p3
 
-expandArticle.addEventListener('click', event => {
+articleTitle.addEventListener('click', event => {
 console.log('button clicked', event.target)
 // expandArticle.classList.toggle('article-open')
 ctaArticle.classList.toggle('article-open')
-
-
 
 
 

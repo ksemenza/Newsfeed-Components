@@ -45,14 +45,10 @@ ul.classList.add('ul')
 
 menuCta.append(ul)
 
-
-
-
  menuBtn.addEventListener('click', event => {
  menuCta.classList.toggle('menu--open')
+ items = [menuItems]
 
-console.log('btn clicked', event.target)
-console.log(item)
  })
   return menuCta;
   }
@@ -65,16 +61,6 @@ function listFunc(item) {
  li.append(item)
   return li
 }
-
-items = [menuItems]
-
-
-
-
-console.log(items)
-
-
-listFunc()
 let ul = document.querySelector('.ul')
 menuItems.forEach(items => {
 
